@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Francis Magretto\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Francis Magretto\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Sharlayan.391874411.00" t="ExcludeRecursive" />
+    <e p="G:\sharlayan" t="IncludeFlat">
+      <e p="Bootstrapper" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="Bootstrapper.csproj" t="IncludeRecursive" />
+        <e p="Bootstrapper.exe.nlog" t="Include" />
+        <e p="NLog.config" t="Include" />
+        <e p="NLog.xsd" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="build\Debug" t="ExcludeRecursive" />
+      <e p="CHANGELOG.md" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="README.md" t="Include" />
+      <e p="sharlayan" t="IncludeRecursive">
+        <e p="AttachmentWorker.cs" t="Include" />
+        <e p="Constants.cs" t="Include" />
+        <e p="Core" t="Include">
+          <e p="ActionContainer.cs" t="Include" />
+          <e p="ActionItem.cs" t="Include" />
+          <e p="ActorItem.cs" t="Include" />
+          <e p="ActorItemBase.cs" t="Include" />
+          <e p="CameraInfo.cs" t="Include" />
+          <e p="ChatCleaner.cs" t="Include" />
+          <e p="ChatEntry.cs" t="Include" />
+          <e p="ChatLogItem.cs" t="Include" />
+          <e p="Coordinate.cs" t="Include" />
+          <e p="CurrentPlayer.cs" t="Include" />
+          <e p="EnmityItem.cs" t="Include" />
+          <e p="Enums" t="Include">
+            <e p="Action.cs" t="Include" />
+            <e p="Actor.cs" t="Include" />
+            <e p="Inventory.cs" t="Include" />
+          </e>
+          <e p="Interfaces" t="Include">
+            <e p="IActionContainer.cs" t="Include" />
+            <e p="IActionItem.cs" t="Include" />
+            <e p="IActorItem.cs" t="Include" />
+            <e p="ICameraInfo.cs" t="Include" />
+            <e p="IChatLogItem.cs" t="Include" />
+            <e p="ICoordinate.cs" t="Include" />
+            <e p="ICurrentPlayer.cs" t="Include" />
+            <e p="IEnmityItem.cs" t="Include" />
+            <e p="IInventoryContainer.cs" t="Include" />
+            <e p="IInventoryItem.cs" t="Include" />
+            <e p="IPartyMember.cs" t="Include" />
+            <e p="IStatusItem.cs" t="Include" />
+            <e p="ITargetInfo.cs" t="Include" />
+          </e>
+          <e p="InventoryContainer.cs" t="Include" />
+          <e p="InventoryItem.cs" t="Include" />
+          <e p="PartyMember.cs" t="Include" />
+          <e p="StatusItem.cs" t="Include" />
+          <e p="TargetInfo.cs" t="Include" />
+        </e>
+        <e p="Delegates" t="Include">
+          <e p="ChatLogWorkerDelegate.cs" t="Include" />
+          <e p="MonsterWorkerDelegate.cs" t="Include" />
+          <e p="NPCWorkerDelegate.cs" t="Include" />
+          <e p="PartyWorkerDelegate.cs" t="Include" />
+          <e p="PCWorkerDelegate.cs" t="Include" />
+        </e>
+        <e p="Events" t="Include">
+          <e p="ExceptionEvent.cs" t="Include" />
+          <e p="SignaturesFoundEvent.cs" t="Include" />
+        </e>
+        <e p="Extensions" t="Include">
+          <e p="StringExtensions.cs" t="Include" />
+        </e>
+        <e p="FodyWeavers.xml" t="Include" />
+        <e p="MemoryHandler.cs" t="Include" />
+        <e p="Models" t="Include">
+          <e p="ChatLogPointers.cs" t="Include" />
+          <e p="Localization.cs" t="Include" />
+          <e p="ProcessModel.cs" t="Include" />
+          <e p="ReadResults" t="Include">
+            <e p="ActionResult.cs" t="Include" />
+            <e p="ActorResult.cs" t="Include" />
+            <e p="CameraResult.cs" t="Include" />
+            <e p="ChatLogResult.cs" t="Include" />
+            <e p="CurrentPlayerResult.cs" t="Include" />
+            <e p="InventoryResult.cs" t="Include" />
+            <e p="PartyResult.cs" t="Include" />
+            <e p="TargetResult.cs" t="Include" />
+          </e>
+          <e p="Signature.cs" t="Include" />
+          <e p="Structures" t="Include">
+            <e p="ActorItem.cs" t="Include" />
+            <e p="CameraInfo.cs" t="Include" />
+            <e p="ChatLogPointers.cs" t="Include" />
+            <e p="CurrentPlayer.cs" t="Include" />
+            <e p="EnmityItem.cs" t="Include" />
+            <e p="HotBarItem.cs" t="Include" />
+            <e p="InventoryContainer.cs" t="Include" />
+            <e p="InventoryItem.cs" t="Include" />
+            <e p="PartyMember.cs" t="Include" />
+            <e p="RecastItem.cs" t="Include" />
+            <e p="StatusItem.cs" t="Include" />
+            <e p="StructuresContainer.cs" t="Include" />
+            <e p="TargetInfo.cs" t="Include" />
+          </e>
+          <e p="XIVDatabase" t="Include">
+            <e p="ActionItem.cs" t="Include" />
+            <e p="MapItem.cs" t="Include" />
+            <e p="StatusItem.cs" t="Include" />
+          </e>
+        </e>
+        <e p="NLog.config" t="Include" />
+        <e p="NLog.xsd" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Reader.Actions.cs" t="Include" />
+        <e p="Reader.Actor.cs" t="Include" />
+        <e p="Reader.Camera.cs" t="Include" />
+        <e p="Reader.ChatLog.cs" t="Include" />
+        <e p="Reader.cs" t="Include" />
+        <e p="Reader.CurrentPlayer.cs" t="Include" />
+        <e p="Reader.Inventory.cs" t="Include" />
+        <e p="Reader.PartyMembers.cs" t="Include" />
+        <e p="Reader.Target.cs" t="Include" />
+        <e p="Scanner.cs" t="Include" />
+        <e p="Sharlayan.csproj" t="IncludeRecursive" />
+        <e p="Signatures.cs" t="Include" />
+        <e p="UnsafeNativeMethods.cs" t="Include" />
+        <e p="Utilities" t="Include">
+          <e p="ActionLookup.cs" t="Include" />
+          <e p="ActorItemResolver.cs" t="Include" />
+          <e p="APIHelper.cs" t="Include" />
+          <e p="BitConverter.cs" t="Include" />
+          <e p="CurrentPlayerResolver.cs" t="Include" />
+          <e p="JsonUtilities.cs" t="Include" />
+          <e p="PartyMemberResolver.cs" t="Include" />
+          <e p="StatusEffectLookup.cs" t="Include" />
+          <e p="XMLCleaner.cs" t="Include" />
+          <e p="ZoneLookup.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Sharlayan.sln" t="IncludeFlat" />
+      <e p="SharlaynTester" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Form1.cs" t="Include" />
+        <e p="Form1.Designer.cs" t="Include" />
+        <e p="Form1.resx" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="SharlaynTester.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="Solution Items" t="Include" />
+    </e>
+  </component>
+</project>

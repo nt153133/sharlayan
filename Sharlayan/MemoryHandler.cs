@@ -12,6 +12,7 @@ namespace Sharlayan {
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Reflection;
     using System.Runtime.InteropServices;
     using System.Text;
     using System.Threading.Tasks;
@@ -184,7 +185,34 @@ namespace Sharlayan {
             Marshal.FreeCoTaskMem(buffer);
             return retValue;
         }
+        
+        public T[] GetArray<T>(IntPtr address,  int count, int offset = 0 ) where T : struct {
+            unsafe {
+                T[] objArray = new T[count];
+                IntPtr lpNumberOfBytesRead;
+                IntPtr buffer = Marshal.AllocCoTaskMem(Marshal.SizeOf(typeof(T)) * count);
+                UnsafeNativeMethods.ReadProcessMemory(this.ProcessModel.Process.Handle, address + offset, buffer, new IntPtr(Marshal.SizeOf(typeof(T)) * count), out lpNumberOfBytesRead);
+                int index = 0;
+                if (0 < count)
+                {
+                    do
+                    {
+                        long num = (long) (Marshal.SizeOf(typeof(T)) * index);
+                        // ISSUE: cast to a reference type
+                        IntPtr ptr = new IntPtr((void*) ((byte*) buffer + num));
+                        objArray[index] = (T) Marshal.PtrToStructure(ptr, typeof (T));
+                        ++index;
+                    }
+                    while (index < count);
+                }
+                //var retValue = (T) Marshal.PtrToStructure(buffer, typeof(T));
+                Marshal.FreeCoTaskMem(buffer);
+                return objArray;
+            }
+        }
 
+
+        
         public ushort GetUInt16(IntPtr address, long offset = 0) {
             byte[] value = new byte[4];
             this.Peek(new IntPtr(address.ToInt64() + offset), value);
@@ -266,9 +294,18 @@ namespace Sharlayan {
             if (this.IsNewInstance) {
                 this.IsNewInstance = false;
 
-                await ActionLookup.Resolve();
-                await StatusEffectLookup.Resolve();
-                await ZoneLookup.Resolve();
+                //Parallel.Invoke(async () => await ActionLookup.Resolve(), async () => await StatusEffectLookup.Resolve(), async () => await ZoneLookup.Resolve());
+                Task[] taskArray = new Task[3];
+
+                taskArray[0] = Task.Factory.StartNew(async () => await ActionLookup.Resolve());
+                taskArray[1] = Task.Factory.StartNew(async () => await  StatusEffectLookup.Resolve());
+                taskArray[2] = Task.Factory.StartNew(async () => await  ZoneLookup.Resolve());
+
+                Task.WaitAll(taskArray);
+                //await ActionLookup.Resolve();
+                //await StatusEffectLookup.Resolve();
+                //await ZoneLookup.Resolve();
+                
 
                 await this.ResolveMemoryStructures(processModel, patchVersion);
             }
@@ -281,7 +318,25 @@ namespace Sharlayan {
 
             Scanner.Instance.Locations.Clear();
             var signatures = await Signatures.Resolve(processModel, patchVersion);
-            Scanner.Instance.LoadOffsets(signatures, scanAllMemoryRegions);
+            List<Signature> sigs = signatures as List<Signature>;
+            sigs.Add(new Signature
+            {
+                Key = "INVENTORYBAGS",
+                PointerPath = new List<long>
+                {
+                    0x15786f0
+                }
+            });
+            
+            sigs.Add(new Signature
+            {
+                Key = "INVENTORYSTART",
+                PointerPath = new List<long>
+                {
+                    0x1c1de30
+                }
+            });
+            Scanner.Instance.LoadOffsets(sigs, scanAllMemoryRegions);
         }
 
         public void UnsetProcess() {

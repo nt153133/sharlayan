@@ -50,7 +50,7 @@ namespace Bootstrapper {
                 MemoryHandler.Instance.SignaturesFoundEvent += delegate (object sender, SignaturesFoundEvent e) {
                     foreach (KeyValuePair<string, Signature> kvp in e.Signatures)
                     {
-                        Console.WriteLine($"{kvp.Key} => {kvp.Value.GetAddress():X}");
+                        Console.WriteLine($"{kvp.Key} => {kvp.Value.GetAddress().ToInt64():X}");
                     }
                 };
 

@@ -75,5 +75,48 @@ namespace Sharlayan.Core.Enums {
 
             COMPANY_CRYSTALS = 0x2D
         }
+        
+        public enum InventoryBagId
+        {
+            Bag1 = 0,
+            Bag2 = 1,
+            Bag3 = 2,
+            Bag4 = 3,
+            Bag5 = 4,
+            Bag6 = 5,
+            EquippedItems = 1000,
+            Currency = 2000,
+            Crystals = 2001,
+            KeyItems = 2004,
+            Armory_MainHand = 3500,
+            Armory_OffHand = 3200,
+            Armory_Helmet = 3201,
+            Armory_Chest = 3202,
+            Armory_Glove = 3203,
+            Armory_Belt = 3204,
+            Armory_Pants = 3205,
+            Armory_Boots = 3206,
+            Armory_Earrings = 3207,
+            Armory_Necklace = 3208,
+            Armory_Writs = 3209,
+            Armory_Rings = 3300,
+            Armory_Souls = 3400,
+            Retainer_Page1 = 10000,
+            Retainer_Page2 = 10001,
+            Retainer_Page3 = 10002,
+            Retainer_Page4 = 10003,
+            Retainer_Page5 = 10004,
+            Retainer_Page6 = 10005,
+            Retainer_Page7 = 10006,
+            Retainer_EquippedItems = 11000,
+            Retainer_Gil = 12000,
+            Retainer_Crystals = 12001,
+            Retainer_Market = 12002,
+            GrandCompany_Page1 = 20000,
+            GrandCompany_Page2 = 20001,
+            GrandCompany_Page3 = 20002,
+            GrandCompany_Gil = 22000,
+            GrandCompany_Crystals = 22001
+        }
     }
 }

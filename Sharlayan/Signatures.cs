@@ -32,6 +32,8 @@ namespace Sharlayan {
         public const string HotBarKey = "HOTBAR";
 
         public const string InventoryKey = "INVENTORY";
+        
+        public const string InventoryKey1 = "INVENTORYBAGS";
 
         public const string MapInformationKey = "MAPINFO";
 
@@ -49,8 +51,7 @@ namespace Sharlayan {
 
         public const string CameraKey = "CAMERA";
 
-        public static IEnumerable<Signature> Resolve(ProcessModel processModel, string patchVersion = "latest") {
-            return APIHelper.GetSignatures(processModel, patchVersion);
+
         public static async Task<IEnumerable<Signature>> Resolve(ProcessModel processModel, string patchVersion = "latest") {
             return await APIHelper.GetSignatures(processModel, patchVersion);
         }

@@ -16,7 +16,8 @@ namespace Sharlayan.Utilities {
     using Sharlayan.Models;
     using Sharlayan.Models.XIVDatabase;
 
-    public static class StatusEffectLookup {
+    public static class StatusEffectLookup 
+    {
         private static StatusItem DefaultStatusInfo = new StatusItem {
             Name = new Localization {
                 Chinese = "???",

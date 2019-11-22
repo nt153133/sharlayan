@@ -8,6 +8,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+// ReSharper disable InconsistentNaming
 namespace Sharlayan.Utilities {
     using System.Collections.Concurrent;
     using System.Collections.Generic;
@@ -37,9 +38,9 @@ namespace Sharlayan.Utilities {
             }
             else {
 #if DEBUG
-                APIResponseToDictionary(actions, file, $"https://raw.githubusercontent.com/qitana/sharlayan-resources/develop/xivdatabase/{patchVersion}/actions.json");
+                await APIResponseToDictionary(actions, file, $"https://raw.githubusercontent.com/qitana/sharlayan-resources/develop/xivdatabase/{patchVersion}/actions.json");
 #else
-                APIResponseToDictionary(actions, file, $"https://qitana.github.io/sharlayan-resources/xivdatabase/{patchVersion}/actions.json");
+                await APIResponseToDictionary(actions, file, $"https://qitana.github.io/sharlayan-resources/xivdatabase/{patchVersion}/actions.json");
 #endif
             }
         }
@@ -54,7 +55,7 @@ namespace Sharlayan.Utilities {
                 return JsonConvert.DeserializeObject<IEnumerable<Signature>>(json, Constants.SerializerSettings);
             }
             else {
-                var json = APIResponseToJSON($"https://raw.githubusercontent.com/FFXIVAPP/sharlayan-resources/master/signatures/{patchVersion}/{architecture}.json");
+                var json = await APIResponseToJSON($"https://raw.githubusercontent.com/FFXIVAPP/sharlayan-resources/master/signatures/{patchVersion}/{architecture}.json");
                 IEnumerable<Signature> resolved = JsonConvert.DeserializeObject<IEnumerable<Signature>>(json, Constants.SerializerSettings);
 
                 File.WriteAllText(file, JsonConvert.SerializeObject(resolved, Formatting.Indented, Constants.SerializerSettings), Encoding.GetEncoding(932));
@@ -69,7 +70,7 @@ namespace Sharlayan.Utilities {
                 EnsureDictionaryValues(statusEffects, file);
             }
             else {
-                APIResponseToDictionary(statusEffects, file, $"https://raw.githubusercontent.com/FFXIVAPP/sharlayan-resources/master/xivdatabase/{patchVersion}/statuses.json");
+                await APIResponseToDictionary(statusEffects, file, $"https://raw.githubusercontent.com/FFXIVAPP/sharlayan-resources/master/xivdatabase/{patchVersion}/statuses.json");
             }
         }
 
@@ -82,7 +83,7 @@ namespace Sharlayan.Utilities {
                 return EnsureClassValues<StructuresContainer>(file);
             }
 
-            return APIResponseToClass<StructuresContainer>(file, $"https://raw.githubusercontent.com/FFXIVAPP/sharlayan-resources/master/structures/{patchVersion}/{architecture}.json");
+            return await APIResponseToClass<StructuresContainer>(file, $"https://raw.githubusercontent.com/FFXIVAPP/sharlayan-resources/master/structures/{patchVersion}/{architecture}.json");
         }
 
         public static async Task GetZones(ConcurrentDictionary<uint, MapItem> mapInfos, string patchVersion = "latest") {
@@ -95,7 +96,7 @@ namespace Sharlayan.Utilities {
                 EnsureDictionaryValues(mapInfos, file);
             }
             else {
-                APIResponseToDictionary(mapInfos, file, $"https://raw.githubusercontent.com/FFXIVAPP/sharlayan-resources/master/xivdatabase/{patchVersion}/zones.json");
+                await APIResponseToDictionary(mapInfos, file, $"https://raw.githubusercontent.com/FFXIVAPP/sharlayan-resources/master/xivdatabase/{patchVersion}/zones.json");
             }
         }
 
