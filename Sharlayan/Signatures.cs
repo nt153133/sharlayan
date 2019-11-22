@@ -10,7 +10,7 @@
 
 namespace Sharlayan {
     using System.Collections.Generic;
-
+    using System.Threading.Tasks;
     using Sharlayan.Models;
     using Sharlayan.Utilities;
 
@@ -51,6 +51,8 @@ namespace Sharlayan {
 
         public static IEnumerable<Signature> Resolve(ProcessModel processModel, string patchVersion = "latest") {
             return APIHelper.GetSignatures(processModel, patchVersion);
+        public static async Task<IEnumerable<Signature>> Resolve(ProcessModel processModel, string patchVersion = "latest") {
+            return await APIHelper.GetSignatures(processModel, patchVersion);
         }
     }
 }
