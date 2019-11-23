@@ -98,7 +98,7 @@ namespace Sharlayan.Core.Enums {
             Armory_Boots = 3206,
             Armory_Earrings = 3207,
             Armory_Necklace = 3208,
-            Armory_Writs = 3209,
+            Armory_Wrists = 3209,
             Armory_Rings = 3300,
             Armory_Souls = 3400,
             Retainer_Page1 = 10000,

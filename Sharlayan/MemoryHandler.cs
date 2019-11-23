@@ -297,7 +297,7 @@ namespace Sharlayan {
                 //Parallel.Invoke(async () => await ActionLookup.Resolve(), async () => await StatusEffectLookup.Resolve(), async () => await ZoneLookup.Resolve());
                 Task[] taskArray = new Task[3];
 
-                taskArray[0] = Task.Factory.StartNew(async () => await ActionLookup.Resolve());
+                taskArray[0] = Task.Factory.StartNew(async () => await  ActionLookup.Resolve());
                 taskArray[1] = Task.Factory.StartNew(async () => await  StatusEffectLookup.Resolve());
                 taskArray[2] = Task.Factory.StartNew(async () => await  ZoneLookup.Resolve());
 

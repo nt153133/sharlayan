@@ -241,7 +241,11 @@ namespace Sharlayan.Core.Enums {
 
             Mount = 0x08,
 
-            Minion = 0x09
+            Minion = 0x09,
+            
+            Retainer = 0x0A,
+            
+            HousingEventObject = 0x0C
         }
     }
 }
