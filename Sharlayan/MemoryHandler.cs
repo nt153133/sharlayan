@@ -197,15 +197,13 @@ namespace Sharlayan {
                 {
                     do
                     {
-                        long num = (long) (Marshal.SizeOf(typeof(T)) * index);
-                        // ISSUE: cast to a reference type
-                        IntPtr ptr = new IntPtr((void*) ((byte*) buffer + num));
+                        long num = Marshal.SizeOf(typeof(T)) * index;
+                        IntPtr ptr = new IntPtr((byte*) buffer + num);
                         objArray[index] = (T) Marshal.PtrToStructure(ptr, typeof (T));
                         ++index;
                     }
                     while (index < count);
                 }
-                //var retValue = (T) Marshal.PtrToStructure(buffer, typeof(T));
                 Marshal.FreeCoTaskMem(buffer);
                 return objArray;
             }
