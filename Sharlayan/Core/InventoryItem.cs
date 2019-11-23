@@ -16,18 +16,34 @@ namespace Sharlayan.Core {
 
         public uint Durability { get; set; }
 
-        public double DurabilityPercent => (double) decimal.Divide(this.Durability, 30000);
+        public double DurabilityPercent => (double) decimal.Divide((100 *this.Durability), 30000);
 
         public uint GlamourID { get; set; }
 
         public uint ID { get; set; }
 
-        public bool IsHQ { get; set; }
+        public bool IsHQ => (HqFlag & 1) == 1;
 
         public uint SB { get; set; }
 
-        public double SBPercent => (double) decimal.Divide(this.SB, 10000);
+        public double SBPercent => (double) decimal.Divide(this.SB, 100);
 
         public int Slot { get; set; }
+
+        public bool IsCollectable => (HqFlag & 8) > 0;
+
+        public byte HqFlag { get; set; }
+
+        public uint Collectability
+        {
+            get
+            {
+                if (!IsCollectable)
+                {
+                    return 0u;
+                }
+                return SB;
+            }
+        }
     }
 }

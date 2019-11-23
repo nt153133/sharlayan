@@ -28,6 +28,8 @@ namespace Sharlayan {
         }
 
         private static Dictionary<int, int> bags; 
+
+        //public static 
         public static async Task<InventoryResult> GetInventory() {
             var result = new InventoryResult();
 
@@ -40,6 +42,8 @@ namespace Sharlayan {
             var BagList = MemoryHandler.Instance.GetArray<int>(Scanner.Instance.Locations["INVENTORYBAGS"].GetAddress(), 0x4a);
 
              bags = new Dictionary<int, int>();
+
+            
          
             for (var index = 0; index < BagList.Length; index++) {
                 
@@ -141,7 +145,7 @@ namespace Sharlayan {
                             GlamourID = (uint) MemoryHandler.Instance.GetPlatformUInt(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.GlamourID),
 
                             // get the flag that show if the item is hq or not
-                            IsHQ = MemoryHandler.Instance.GetByte(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.IsHQ) == 0x01
+                            HqFlag = MemoryHandler.Instance.GetByte(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.IsHQ) 
                         });
                 }
             }
@@ -195,7 +199,7 @@ namespace Sharlayan {
                             GlamourID = (uint) MemoryHandler.Instance.GetPlatformUInt(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.GlamourID),
 
                             // get the flag that show if the item is hq or not
-                            IsHQ = MemoryHandler.Instance.GetByte(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.IsHQ) == 0x01
+                            HqFlag = MemoryHandler.Instance.GetByte(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.IsHQ)
                         });
                 }
             }

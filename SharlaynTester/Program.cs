@@ -9,6 +9,7 @@ namespace SharlaynTester {
     using System.Threading;
 
     using Sharlayan;
+    using Sharlayan.Core;
     using Sharlayan.Events;
     using Sharlayan.Models;
 
@@ -63,6 +64,15 @@ namespace SharlaynTester {
             }
 
             return false;
+        }
+
+
+    }
+    public static class InventoryItemExt
+    {
+        public static string ToStringMine(this InventoryItem item)
+        {
+            return $"{item.ID} : {item.Amount}";
         }
     }
 }

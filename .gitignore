@@ -354,3 +354,6 @@ MigrationBackup/
 # sharlayan
 build/
 distribution/
+/.idea/.idea.Sharlayan/.idea/vcs.xml
+/.idea/.idea.Sharlayan/.idea/projectSettingsUpdater.xml
+/.idea/.idea.Sharlayan/.idea/.name

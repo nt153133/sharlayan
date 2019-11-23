@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffcc88fa-18cf-476d-a929-204fdfc6c758" name="Default Changelist" comment="" />
+    <list default="true" id="ffcc88fa-18cf-476d-a929-204fdfc6c758" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sharlayan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sharlayan/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,10 +14,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Sharlayan/Core/ActionItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Core/InventoryContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Core/CurrentPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/UnsafeNativeMethods.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Models/Structures/InventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sharlayan/Core/ActorItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Scanner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Signatures.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Models/Structures/InventoryContainer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -24,17 +28,26 @@
     <setting file="file://$PROJECT_DIR$/Bootstrapper/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Utilities/StatusEffectLookup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Utilities/APIHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sharlayan/Reader.Actor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Utilities/CurrentPlayerResolver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Reader.Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sharlayan/Models/ReadResults/ActorResult.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2ECD3F11-D027-42CB-A32F-58723999A994/e5/7262c344/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sharlayan/Reader.ChatLog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Utilities/ActionLookup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Reader.Actions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SharlaynTester/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sharlayan/Core/Interfaces/IInventoryContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sharlayan/Core/Enums/Actor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Core/Enums/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SharlaynTester/Form1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2ECD3F11-D027-42CB-A32F-58723999A994/dc/bdbcc15b/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sharlayan/Delegates/NPCWorkerDelegate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sharlayan/Core/Enums/Action.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/862B9365-843C-4BF1-BA93-210C124BB523/10/46af7302/Socket.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sharlayan/Models/ReadResults/InventoryResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sharlayan/Core/ChatEntry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sharlayan/Core/ChatLogItem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -48,11 +61,12 @@
         <option value="$PROJECT_DIR$/Bootstrapper/Program.cs" />
         <option value="$PROJECT_DIR$/SharlaynTester/Program.cs" />
         <option value="$PROJECT_DIR$/Sharlayan/Signatures.cs" />
-        <option value="$PROJECT_DIR$/Sharlayan/Core/Enums/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Sharlayan/MemoryHandler.cs" />
         <option value="$PROJECT_DIR$/Sharlayan/Core/InventoryContainer.cs" />
         <option value="$PROJECT_DIR$/SharlaynTester/Form1.cs" />
         <option value="$PROJECT_DIR$/Sharlayan/Reader.Inventory.cs" />
+        <option value="$PROJECT_DIR$/Sharlayan/Core/Enums/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Sharlayan/Core/Enums/Actor.cs" />
+        <option value="$PROJECT_DIR$/Sharlayan/MemoryHandler.cs" />
       </list>
     </option>
   </component>
@@ -127,21 +141,39 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574397804518</updated>
-      <workItem from="1574397810310" duration="20282000" />
+      <workItem from="1574397810310" duration="21689000" />
+      <workItem from="1574472724273" duration="4736000" />
     </task>
+    <task id="LOCAL-00001" summary="More actor enums">
+      <created>1574485807085</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574485807085</updated>
+    </task>
+    <task id="LOCAL-00002" summary="clean up getarray">
+      <created>1574485908033</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574485908033</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -149,6 +181,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+    <MESSAGE value="More actor enums" />
+    <MESSAGE value="clean up getarray" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean up getarray" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
