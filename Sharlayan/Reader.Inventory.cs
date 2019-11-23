@@ -58,7 +58,7 @@ namespace Sharlayan {
                 foreach (Inventory.InventoryBagId bag in Enum.GetValues(typeof(Inventory.InventoryBagId)))
                 {
                     if (bags.ContainsKey((int)bag))
-                        result.InventoryContainers.Add(GetInventoryItems1(bag));
+                        result.InventoryContainers.Add(GetInventoryItemsBags(bag));
                 }
                 
                 
@@ -153,18 +153,15 @@ namespace Sharlayan {
             return container;
         }
         
-        private static InventoryContainer GetInventoryItems1(Inventory.InventoryBagId bagId) {
+        private static InventoryContainer GetInventoryItemsBags(Inventory.InventoryBagId bagId) {
             var InventoryPointerMap = new IntPtr(MemoryHandler.Instance.GetPlatformUInt(Scanner.Instance.Locations[Signatures.InventoryKey]));
-            Debug.WriteLine($"InventoryPointerMap : {InventoryPointerMap.ToInt64():X}");
+            //Debug.WriteLine($"InventoryPointerMap : {InventoryPointerMap.ToInt64():X}");
             int type = bags[(int) bagId];
             
-            Debug.WriteLine($"{bagId} {type}");
+            //Debug.WriteLine($"{bagId} {type}");
             var offset = (uint) ((int) type * 24);
             var containerAddress = MemoryHandler.Instance.GetPlatformUInt(InventoryPointerMap, offset);
 
-           // int bagCount = MemoryHandler.Instance.GetInt32(Scanner.Instance.Locations["INVENTORYSTART"].GetAddress(), 0x4a);
-
-            //var test = MemoryHandler.Instance.GetArray<int>(Scanner.Instance.Locations["INVENTORYBAGS"].GetAddress(), bagCount);
             var container = new InventoryContainer {
                 Amount = MemoryHandler.Instance.GetByte(InventoryPointerMap, offset + MemoryHandler.Instance.Structures.InventoryContainer.Amount),
                 TypeID = (byte) type,
@@ -172,18 +169,7 @@ namespace Sharlayan {
                 BagType = MemoryHandler.Instance.GetInt32(Scanner.Instance.Locations["INVENTORYBAGS"].GetAddress(), sizeof(int) * (int)type)
             };
 
-            // The number of item is 50 in COMPANY's locker
             int limit = MemoryHandler.Instance.GetByte(InventoryPointerMap, offset + MemoryHandler.Instance.Structures.InventoryContainer.Amount) * 56;
-            /*switch (type) {
-                case Inventory.Container.COMPANY_1:
-                case Inventory.Container.COMPANY_2:
-                case Inventory.Container.COMPANY_3:
-                    limit = MemoryHandler.Instance.GetByte(InventoryPointerMap, offset + MemoryHandler.Instance.Structures.InventoryContainer.Amount) * 56;
-                    break;
-                default:
-                    limit = MemoryHandler.Instance.GetByte(InventoryPointerMap, offset + MemoryHandler.Instance.Structures.InventoryContainer.Amount) * 56;
-                    break;
-            }*/
 
             for (var i = 0; i < limit; i += 56) {
                 var itemOffset = new IntPtr(containerAddress + i);
