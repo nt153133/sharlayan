@@ -139,7 +139,7 @@ namespace Sharlayan {
                         new InventoryItem {
                             ID = (uint) id,
                             Slot = MemoryHandler.Instance.GetByte(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.Slot),
-                            Amount = MemoryHandler.Instance.GetByte(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.Amount),
+                            Amount = (uint)MemoryHandler.Instance.GetPlatformUInt(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.Amount),
                             SB = MemoryHandler.Instance.GetUInt16(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.SB),
                             Durability = MemoryHandler.Instance.GetUInt16(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.ID),
                             GlamourID = (uint) MemoryHandler.Instance.GetPlatformUInt(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.GlamourID),
@@ -193,7 +193,7 @@ namespace Sharlayan {
                         new InventoryItem {
                             ID = (uint) id,
                             Slot = MemoryHandler.Instance.GetByte(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.Slot),
-                            Amount = MemoryHandler.Instance.GetByte(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.Amount),
+                            Amount = (uint)MemoryHandler.Instance.GetPlatformUInt(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.Amount),
                             SB = MemoryHandler.Instance.GetUInt16(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.SB),
                             Durability = MemoryHandler.Instance.GetUInt16(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.ID),
                             GlamourID = (uint) MemoryHandler.Instance.GetPlatformUInt(itemOffset, MemoryHandler.Instance.Structures.InventoryItem.GlamourID),
